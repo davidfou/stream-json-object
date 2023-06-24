@@ -1,0 +1,16 @@
+{
+  "name": "stream-json-object",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "29.5.0",
+    "prettier": "2.8.8"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "stream-json": "1.8.0"
+  }
+}
