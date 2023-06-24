@@ -3,7 +3,6 @@ import Stream from "node:stream/promises";
 import streamObjectTransformer from "../src/streamObjectTransformer.mjs";
 import path from "node:path";
 import _ from "lodash";
-import assert from "node:assert";
 
 await Stream.pipeline(
   fs.createReadStream(path.join(process.cwd(), "demo/input.json")),
@@ -23,10 +22,10 @@ await Stream.pipeline(
       }
       out = _.set(out, chunk.key, chunk.value);
       i += 1;
-      console.log("step %i", i)
+      console.log("step %i", i);
       console.log(out);
     }
-    
-    console.log("object recreated in %i steps", i)
+
+    console.log("object recreated in %i steps", i);
   }
 );
