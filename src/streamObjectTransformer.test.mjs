@@ -53,6 +53,102 @@ describe("streamObjectTransformer", () => {
         { key: [2], value: 1 },
       ],
     },
+    {
+      description: "an object containing an empty array",
+      input: { key1: 0, key2: [], key3: 1 },
+      expectedOutput: [
+        { key: ["key1"], value: 0 },
+        { key: ["key2"], value: [] },
+        { key: ["key3"], value: 1 },
+      ],
+    },
+    {
+      description: "an object containing an empty object",
+      input: { key1: 0, key2: {}, key3: 1 },
+      expectedOutput: [
+        { key: ["key1"], value: 0 },
+        { key: ["key2"], value: {} },
+        { key: ["key3"], value: 1 },
+      ],
+    },
+    {
+      description: "an array containing an array containing an array",
+      input: [0, [1, [2]], 3],
+      expectedOutput: [
+        { key: [0], value: 0 },
+        { key: [1, 0], value: 1 },
+        { key: [1, 1, 0], value: 2 },
+        { key: [2], value: 3 },
+      ],
+    },
+    {
+      description: "an array containing an array containing an object",
+      input: [0, [1, { key: 2 }], 3],
+      expectedOutput: [
+        { key: [0], value: 0 },
+        { key: [1, 0], value: 1 },
+        { key: [1, 1, "key"], value: 2 },
+        { key: [2], value: 3 },
+      ],
+    },
+    {
+      description: "an array containing an object containing an array",
+      input: [0, { key: [1, 2] }, 3],
+      expectedOutput: [
+        { key: [0], value: 0 },
+        { key: [1, "key", 0], value: 1 },
+        { key: [1, "key", 1], value: 2 },
+        { key: [2], value: 3 },
+      ],
+    },
+    {
+      description: "an array containing an object containing an object",
+      input: [0, { key: { key: 1 } }, 3],
+      expectedOutput: [
+        { key: [0], value: 0 },
+        { key: [1, "key", "key"], value: 1 },
+        { key: [2], value: 3 },
+      ],
+    },
+    {
+      description: "an object containing an array containing an array",
+      input: { key1: 0, key2: [1, [2]], key3: 3 },
+      expectedOutput: [
+        { key: ["key1"], value: 0 },
+        { key: ["key2", 0], value: 1 },
+        { key: ["key2", 1, 0], value: 2 },
+        { key: ["key3"], value: 3 },
+      ],
+    },
+    {
+      description: "an object containing an array containing an object",
+      input: { key1: 0, key2: [1, { key: 2 }], key3: 3 },
+      expectedOutput: [
+        { key: ["key1"], value: 0 },
+        { key: ["key2", 0], value: 1 },
+        { key: ["key2", 1, "key"], value: 2 },
+        { key: ["key3"], value: 3 },
+      ],
+    },
+    {
+      description: "an object containing an object containing an array",
+      input: { key1: 0, key2: { key: [1, 2] }, key3: 3 },
+      expectedOutput: [
+        { key: ["key1"], value: 0 },
+        { key: ["key2", "key", 0], value: 1 },
+        { key: ["key2", "key", 1], value: 2 },
+        { key: ["key3"], value: 3 },
+      ],
+    },
+    {
+      description: "an object containing an object containing an object",
+      input: { key1: 0, key2: { key: { key: 1 } }, key3: 3 },
+      expectedOutput: [
+        { key: ["key1"], value: 0 },
+        { key: ["key2", "key", "key"], value: 1 },
+        { key: ["key3"], value: 3 },
+      ],
+    },
   ])(
     "emits expected elements with $description",
     async ({ input, expectedOutput }) => {

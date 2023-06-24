@@ -8,9 +8,10 @@
     "prettier": "2.8.8"
   },
   "scripts": {
-    "test": "jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "stream-json": "1.8.0"
   }
 }

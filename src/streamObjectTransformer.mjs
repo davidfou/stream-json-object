@@ -27,8 +27,8 @@ const streamObjectTransformer = () =>
             path = path.slice(0, -1);
             if (lastPathValue === 0) {
               yield { key: path, value: [] };
-              path = updatePath(path);
             }
+            path = updatePath(path);
             break;
           case "startObject":
             path = [...path, null];
@@ -37,11 +37,8 @@ const streamObjectTransformer = () =>
             path = path.slice(0, -1);
             if (lastPathValue === null) {
               yield { key: path, value: {} };
-              path = updatePath(path);
             }
-            break;
-          case "endArray":
-            path = path.slice(0, -1);
+            path = updatePath(path);
             break;
           case "keyValue":
             path = [...path.slice(0, -1), chunk.value];
