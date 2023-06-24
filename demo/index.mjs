@@ -5,7 +5,7 @@ import path from "node:path";
 import _ from "lodash";
 
 await Stream.pipeline(
-  fs.createReadStream(path.join(process.cwd(), "demo/input.json")),
+  fs.createReadStream(path.join(process.cwd(), "demo/solar_system.json")),
   async function* (source) {
     for await (const chunk of source) {
       yield chunk.toString();

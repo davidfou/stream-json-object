@@ -1,0 +1,95 @@
+{
+  "solar_system": {
+    "sun": {
+      "name": "Sun",
+      "type": "Star",
+      "mass": "1.989 × 10^30 kg",
+      "radius": "695,700 km",
+      "age": "4.6 billion years"
+    },
+    "planets": [
+      {
+        "name": "Mercury",
+        "type": "Terrestrial",
+        "mass": "3.3011 × 10^23 kg",
+        "radius": "2,439.7 km",
+        "distance_from_sun": "57.9 million km",
+        "orbital_period": "88 days"
+      },
+      {
+        "name": "Venus",
+        "type": "Terrestrial",
+        "mass": "4.8675 × 10^24 kg",
+        "radius": "6,051.8 km",
+        "distance_from_sun": "108.2 million km",
+        "orbital_period": "225 days"
+      },
+      {
+        "name": "Earth",
+        "type": "Terrestrial",
+        "mass": "5.97237 × 10^24 kg",
+        "radius": "6,371 km",
+        "distance_from_sun": "149.6 million km",
+        "orbital_period": "365.25 days"
+      },
+      {
+        "name": "Mars",
+        "type": "Terrestrial",
+        "mass": "6.4171 × 10^23 kg",
+        "radius": "3,389.5 km",
+        "distance_from_sun": "227.9 million km",
+        "orbital_period": "687 days"
+      },
+      {
+        "name": "Jupiter",
+        "type": "Gas Giant",
+        "mass": "1.8982 × 10^27 kg",
+        "radius": "69,911 km",
+        "distance_from_sun": "778.5 million km",
+        "orbital_period": "11.9 years"
+      },
+      {
+        "name": "Saturn",
+        "type": "Gas Giant",
+        "mass": "5.6834 × 10^26 kg",
+        "radius": "58,232 km",
+        "distance_from_sun": "1.4 billion km",
+        "orbital_period": "29.5 years"
+      },
+      {
+        "name": "Uranus",
+        "type": "Ice Giant",
+        "mass": "8.6810 × 10^25 kg",
+        "radius": "25,362 km",
+        "distance_from_sun": "2.9 billion km",
+        "orbital_period": "84 years"
+      },
+      {
+        "name": "Neptune",
+        "type": "Ice Giant",
+        "mass": "1.02413 × 10^26 kg",
+        "radius": "24,622 km",
+        "distance_from_sun": "4.5 billion km",
+        "orbital_period": "165 years"
+      }
+    ],
+    "dwarf_planets": [
+      {
+        "name": "Pluto",
+        "type": "Dwarf Planet",
+        "mass": "1.303 × 10^22 kg",
+        "radius": "1,188.3 km",
+        "distance_from_sun": "5.9 billion km",
+        "orbital_period": "248 years"
+      },
+      {
+        "name": "Eris",
+        "type": "Dwarf Planet",
+        "mass": "1.6466 × 10^22 kg",
+        "radius": "1,163 km",
+        "distance_from_sun": "14.6 billion km",
+        "orbital_period": "557 years"
+      }
+    ]
+  }
+}
