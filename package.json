@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.21",
+    "node-fetch": "3.3.1",
     "stream-json": "1.8.0"
   }
 }
