@@ -7,7 +7,7 @@ const updatePath = (path) => {
     return [...path.slice(0, -1), lastPathValue + 1];
   }
   return path;
-}
+};
 
 const streamObjectTransformer = () =>
   Stream.compose(
@@ -26,7 +26,7 @@ const streamObjectTransformer = () =>
           case "endArray":
             path = path.slice(0, -1);
             if (lastPathValue === 0) {
-              yield { key: path, value: [] }
+              yield { key: path, value: [] };
               path = updatePath(path);
             }
             break;
@@ -35,6 +35,10 @@ const streamObjectTransformer = () =>
             break;
           case "endObject":
             path = path.slice(0, -1);
+            if (lastPathValue === null) {
+              yield { key: path, value: {} };
+              path = updatePath(path);
+            }
             break;
           case "endArray":
             path = path.slice(0, -1);

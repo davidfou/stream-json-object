@@ -44,6 +44,15 @@ describe("streamObjectTransformer", () => {
         { key: [2], value: 1 },
       ],
     },
+    {
+      description: "an array containing an empty object",
+      input: [0, {}, 1],
+      expectedOutput: [
+        { key: [0], value: 0 },
+        { key: [1], value: {} },
+        { key: [2], value: 1 },
+      ],
+    },
   ])(
     "emits expected elements with $description",
     async ({ input, expectedOutput }) => {
